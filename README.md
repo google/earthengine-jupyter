@@ -7,16 +7,6 @@ earthengine-jupyter
 supported Google project. You are welcome to use it, but we do not
 guarantee stability.**
 
-## Install
-
-*TODO: Describe how to setup Colab (install packages) and JupyterLab*
-
-Install from GitHub
-
-``` sh
-pip install 
-```
-
 ## How to use
 
 This lib contains a `map` class that can be used to display an
