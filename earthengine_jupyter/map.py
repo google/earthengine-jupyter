@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['DEFAULT_MAP_HEIGHT', 'TileLayerEE', 'JupyterMap']
 
-# %% ../00_map.ipynb 3
+# %% ../00_map.ipynb 4
 import ee
 import ipyleaflet
 import ipywidgets as widgets

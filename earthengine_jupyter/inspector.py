@@ -3,12 +3,12 @@
 # %% auto 0
 __all__ = ['SCALE_LEVEL_0', 'MapInspector']
 
-# %% ../01_inspector.ipynb 3
+# %% ../01_inspector.ipynb 4
 from collections import OrderedDict
 import ee
 import ipytree
 
-# %% ../01_inspector.ipynb 4
+# %% ../01_inspector.ipynb 5
 # Map scale at Level 0 in meters/pixel
 SCALE_LEVEL_0 = 156543.03392
 
