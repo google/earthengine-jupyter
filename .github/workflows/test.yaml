@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Write Earth Engine credentials file
-        run: |
+        run:
           mkdir -p /home/runner/.config/earthengine
+          ls -l /home/runner/.config/earthengine/
           echo ${{ secrets.SECRET_CREDENTIALS }} | base64 --decode > /home/runner/.config/earthengine/credentials
+          ls -l /home/runner/.config/earthengine/
       - uses: fastai/workflows/nbdev-ci@master
