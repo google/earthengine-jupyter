@@ -30,8 +30,8 @@ interactive map.
 
 ``` python
 import ee
-from ee_jupyter.map import JupyterMap
-from ee_jupyter.inspector import MapInspector
+from ee_jupyter.ipyleaflet import Map
+from ee_jupyter.ipyleaflet import Inspector
 from ipywidgets import HBox
 
 ee.Initialize()
@@ -47,13 +47,13 @@ visualization = {
 ```
 
 ``` python
-map1 = JupyterMap(center=(37.5924, -122.09), zoom=8)
-inspector1 = MapInspector(map_object=map1)
+map1 = Map(center=(37.5924, -122.09), zoom=8)
+inspector1 = Inspector(map_object=map1)
 
 display(HBox([map1, inspector1]))
 ```
 
-    HBox(children=(JupyterMap(center=[37.5924, -122.09], controls=(ZoomControl(options=['position', 'zoom_in_text'…
+    HBox(children=(Map(center=[37.5924, -122.09], controls=(ZoomControl(options=['position', 'zoom_in_text', 'zoom…
 
 Add an Earth Engine image to the map.
 
@@ -83,6 +83,6 @@ print(url)
 Image(url=url, format='png', embed=True)
 ```
 
-    https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/thumbnails/ac806a13e67cc8e1151e9189b409c500-8fb4d6d8b7d09bb80efbbef2ef0fb7e9:getPixels
+    https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/thumbnails/ac806a13e67cc8e1151e9189b409c500-fea91baa41ef3314a13b4d5d411c5305:getPixels
 
 ![](index_files/figure-gfm/cell-9-output-2.png)
