@@ -30,8 +30,8 @@ interactive map.
 
 ``` python
 import ee
-from earthengine_jupyter.map import JupyterMap
-from earthengine_jupyter.inspector import MapInspector
+from ee_jupyter.map import JupyterMap
+from ee_jupyter.inspector import MapInspector
 from ipywidgets import HBox
 
 ee.Initialize()
@@ -83,6 +83,6 @@ print(url)
 Image(url=url, format='png', embed=True)
 ```
 
-    https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/thumbnails/ac806a13e67cc8e1151e9189b409c500-5820392a72f0c768b305ace45f5b662a:getPixels
+    https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/thumbnails/ac806a13e67cc8e1151e9189b409c500-8fb4d6d8b7d09bb80efbbef2ef0fb7e9:getPixels
 
 ![](index_files/figure-gfm/cell-9-output-2.png)
