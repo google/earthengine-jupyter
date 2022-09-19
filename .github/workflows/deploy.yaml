@@ -5,7 +5,14 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
+    environment: CI
     runs-on: ubuntu-latest
     steps:
+      - name: Write Earth Engine credentials file
+        run: |
+          mkdir -p /home/runner/.config/earthengine
+          ls -l /home/runner/.config/earthengine/
+          echo ${{ secrets.SECRET_CREDENTIALS }} | base64 --decode > /home/runner/.config/earthengine/credentials
+          ls -l /home/runner/.config/earthengine/
       - uses: fastai/workflows/quarto-ghp@master
         with: {pre: 1}
