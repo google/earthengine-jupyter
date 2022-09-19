@@ -14,8 +14,18 @@ interactive map.
 
 ``` python
 import ee
+from ee_jupyter.core import colab_gee_setup
 from ee_jupyter.ipyleaflet import Map
 ```
+
+``` python
+colab_gee_setup()
+```
+
+    Verifying environment is setup for earthengine-jupyter...
+    ✓ The package earthengine-jupyter is already installed.
+    ✓ Authentication credentials were found.
+    ✓ Done.
 
 ``` python
 # Intialize the Earth Engine client library.
@@ -91,4 +101,4 @@ url = img1.getThumbUrl(visualization)
 Image(url=url, format='png', embed=True)
 ```
 
-![](index_files/figure-gfm/cell-8-output-1.png)
+![](index_files/figure-gfm/cell-9-output-1.png)
