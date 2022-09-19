@@ -77,7 +77,7 @@ class Map(ipyleaflet.Map):
     )
     self.add_layer(TileLayerEE(ee_object=eeObject, url=tile_url, name=name, visible=shown))
 
-# %% ../00_ipyleaflet.ipynb 16
+# %% ../00_ipyleaflet.ipynb 15
 # Map scale at Level 0 in meters/pixel
 SCALE_LEVEL_0 = 156543.03392
 
