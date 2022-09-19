@@ -19,7 +19,10 @@ class TileLayerEE(ipyleaflet.TileLayer):
   Attributes:
     ee_object: An Earth Engine object.
   """
-  def __init__(self, ee_object, *args, **kwargs):
+  def __init__(self,
+               ee_object:ee.Image, # An Earth Engine Image object
+               *args,
+               **kwargs):
 
     self.ee_object = ee_object
 
@@ -84,7 +87,10 @@ SCALE_LEVEL_0 = 156543.03392
 class Inspector(ipytree.Tree):
     """Class representing an inspector tool that responds to map events."""
     
-    def __init__(self, map_object=None, *args, **kwargs):
+    def __init__(self,
+                 map_object=None, # An Earth Engine Image object
+                 *args,
+                 **kwargs):
 
         point_folder = ipytree.Node('Point', icon='map')
         pixels_folder = ipytree.Node('Pixels', icon='archive')

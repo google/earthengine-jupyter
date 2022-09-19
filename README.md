@@ -68,9 +68,10 @@ display(HBox([map1, inspector1]))
 
 > **Tip With Caption**
 >
-> Note that Jupyter widgets do not interact with each other when
-> published as documentation. Open up this notebook in a Jupyter
-> environment to see the interaction.
+> Note that when viewed on GitHub Pages you can manipulate Jupyter
+> widgets independently, but the widgets do not interact with each
+> other. To experience the cross-widget interactivity, open up this
+> notebook in a Jupyter environment.
 
 </div>
 
