@@ -2,6 +2,14 @@
 
 <!-- do not remove -->
 
+## 0.0.3
+
+
+### Bugs Squashed
+
+- Having code in package to install itself doesn't work ([#12](https://github.com/google/earthengine-jupyter/issues/12))
+
+
 ## 0.0.2
 
 ### New Features
