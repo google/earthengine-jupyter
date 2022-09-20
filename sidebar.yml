@@ -2,4 +2,5 @@ website:
   sidebar:
     contents:
       - index.ipynb
+      - 00_core.ipynb
       - 00_ipyleaflet.ipynb

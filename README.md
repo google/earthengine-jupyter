@@ -7,25 +7,37 @@ earthengine-jupyter
 supported Google project. You are welcome to use it, but we do not
 guarantee stability.**
 
+## Setup
+
+``` python
+try:
+  import ee_jupyter
+  print('ee_jupyter was already installed.')
+except ModuleNotFoundError:
+  print('ee_jupyter was not found. Installing now...')
+  import os
+  result = os.system('pip -q install earthengine-jupyter')
+```
+
+    ee_jupyter was already installed.
+
 ## How to use
 
-This lib contains a `Map` class that can be used to display an
-interactive map.
+This lib contains a
+[`Map`](https://googlestaging.github.io/earthengine-jupyter/ipyleaflet.html#map)
+class that can be used to display an interactive map.
 
 ``` python
 import ee
-from ee_jupyter.core import colab_gee_setup
+from ee_jupyter.core import authenticate_if_needed
 from ee_jupyter.ipyleaflet import Map
 ```
 
 ``` python
-colab_gee_setup()
+authenticate_if_needed()
 ```
 
-    Verifying environment is setup for earthengine-jupyter...
-    ✓ The package earthengine-jupyter is already installed.
     ✓ Authentication credentials were found.
-    ✓ Done.
 
 ``` python
 # Intialize the Earth Engine client library.
@@ -101,4 +113,4 @@ url = img1.getThumbUrl(visualization)
 Image(url=url, format='png', embed=True)
 ```
 
-![](index_files/figure-gfm/cell-9-output-1.png)
+![](index_files/figure-gfm/cell-10-output-1.png)
