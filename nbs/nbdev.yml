@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "earthengine-jupyter"
+  site-url: "https://googlestaging.github.io/earthengine-jupyter"
+  description: "Tools for working with the Earth Engine from a Jupyter development environment"
+  repo-branch: main
+  repo-url: "https://github.com/googlestaging/earthengine-jupyter"
