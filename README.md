@@ -19,13 +19,12 @@ except ModuleNotFoundError:
   result = os.system('pip -q install earthengine-jupyter')
 ```
 
-    ee_jupyter was already installed.
+    Make sure that the earthengine-jupyter package is installed...
 
 ## How to use
 
-This lib contains a
-[`Map`](https://googlestaging.github.io/earthengine-jupyter/ipyleaflet.html#map)
-class that can be used to display an interactive map.
+This lib contains a `Map` class that can be used to display an
+interactive map.
 
 ``` python
 import ee

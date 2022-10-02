@@ -5,14 +5,14 @@ __all__ = ['authenticate_if_needed']
 
 # %% ../nbs/00_core.ipynb 5
 def authenticate_if_needed():
-  """Authenticate Earth Engine, if credentials do not exist.
-  
-  * Authenticate, if needed."""
-  
-  import ee
-  import os
-  
-  if os.path.exists(ee.oauth.get_credentials_path()):
-    print('\N{check mark} Authentication credentials were found.')
-  else:
-    ee.Authenticate()
+    """Authenticate Earth Engine, if credentials do not exist.
+
+    * Authenticate, if needed."""
+
+    import ee
+    import os
+
+    if os.path.exists(ee.oauth.get_credentials_path()):
+        print('\N{check mark} Authentication credentials were found.')
+    else:
+        ee.Authenticate()
