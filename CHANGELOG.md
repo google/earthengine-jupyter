@@ -14,20 +14,11 @@
 - Map: Display crosshairs when cursor is over the map ([#9](https://github.com/tylere/earthengine-jupyter/issues/9))
 
 - Provide map view details in the Inspector's Point folder ([#5](https://github.com/tylere/earthengine-jupyter/issues/5))
-  - For example:
-```
-Point
-    Longitude: -101.440234375
-​    Latitude: 41.62751361509059
-​    Zoom Level: 4
-​​    Scale (approx. m/px): 9783.93962050256
-```
 
 - Inspector: return "No unmasked pixels at clicked point." for layers with fully masked bands ([#2](https://github.com/tylere/earthengine-jupyter/issues/2))
 
 - Inspector: disable Pixels & Objects folders if there are non map layers ([#1](https://github.com/tylere/earthengine-jupyter/issues/1))
   - Similar to the Code Editor, only display the Pixels and Objects folders if the map has layers
-
 
 
 ## 0.0.3
