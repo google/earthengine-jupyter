@@ -181,7 +181,7 @@ class Inspector(ipytree.Tree):
             # Update the Point folder
             point_nodes = [
                 ipytree.Node(f'Longitude: {lon:.6f}'),
-                ipytree.Node(f'Latitutde: {lat:.6f}'),
+                ipytree.Node(f'Latitude: {lat:.6f}'),
                 ipytree.Node(
                     f'Zoom Level: {self.map_object.zoom:.0f}'
                 ),

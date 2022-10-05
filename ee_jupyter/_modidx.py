@@ -31,6 +31,6 @@ d = { 'settings': { 'branch': 'main',
                                        'ee_jupyter.ipyleaflet.TileLayerEE': ('ipyleaflet.html#tilelayeree', 'ee_jupyter/ipyleaflet.py'),
                                        'ee_jupyter.ipyleaflet.TileLayerEE.__init__': ( 'ipyleaflet.html#tilelayeree.__init__',
                                                                                        'ee_jupyter/ipyleaflet.py')},
-            'ee_jupyter.layout': { 'ee_jupyter.layout.MapInspectorHBox': ('panel.html#mapinspectorhbox', 'ee_jupyter/layout.py'),
-                                   'ee_jupyter.layout.MapInspectorHBox.__init__': ( 'panel.html#mapinspectorhbox.__init__',
+            'ee_jupyter.layout': { 'ee_jupyter.layout.MapInspectorHBox': ('layout.html#mapinspectorhbox', 'ee_jupyter/layout.py'),
+                                   'ee_jupyter.layout.MapInspectorHBox.__init__': ( 'layout.html#mapinspectorhbox.__init__',
                                                                                     'ee_jupyter/layout.py')}}}
