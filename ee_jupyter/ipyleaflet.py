@@ -59,7 +59,10 @@ class Map(ipyleaflet.Map):
       self.add_control(self.layers_control_instance)
         
     self.default_style.cursor = 'crosshair'
-        
+    
+    self.layout.width = '100%'
+    
+    
   def addLayer(self, eeObject, visParams={}, name=None, shown=True, opacity=1):
     """Adds a layer for an Earth Engine object."""
     
@@ -97,9 +100,8 @@ class Inspector(ipytree.Tree):
         objects_folder = ipytree.Node('Objects', icon='archive')
         
         self.map_object = map_object
-        self.layout.width = '40%'
+        self.layout.width = '100%'
         self.layout.max_height = '400px'
-        self.layout.border = 'solid'
         self.layout.overflow = 'scroll'
 
         super(Inspector, self).__init__(
@@ -192,7 +194,6 @@ class Inspector(ipytree.Tree):
             ]
             _point_node = ipytree.Node(f'Point ({lon:.2f}, {lat:.2f})', nodes=point_nodes)
             self.point_node = _point_node
-
             
             # Update the Pixels folder
             pixel_nodes = []
@@ -257,3 +258,4 @@ class Inspector(ipytree.Tree):
 
     def get_map(self):
         return self.map_object
+
