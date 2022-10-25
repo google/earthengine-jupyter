@@ -113,4 +113,4 @@ url = img1.getThumbUrl(visualization)
 Image(url=url, format='png', embed=True)
 ```
 
-![](index_files/figure-gfm/cell-10-output-1.png)
+![](index_files/figure-commonmark/cell-10-output-1.png)
