@@ -31,7 +31,7 @@ class MapWithInspector(ipywidgets.VBox):
             children = [self.inspector, self.output],
             titles = ['Inspector', 'Console'],
             selected_index = 1,
-            layout = {'width': '50%'}
+            #layout = {'width': '50%'}
         )
         self.tab = tab
     
@@ -40,7 +40,7 @@ class MapWithInspector(ipywidgets.VBox):
             self.tab,
         ])
         
-        slider = ipywidgets.FloatSlider(min=0, max=100, value=50, readout=False, layout={'width':'100%'})
+        slider = ipywidgets.FloatSlider(min=0, max=100, readout=False, layout={'width':'100%'})
         
         def handle_slider_change(change):
             self.map.layout.width = f'{change.new}%'
@@ -49,8 +49,11 @@ class MapWithInspector(ipywidgets.VBox):
         
         if 'children' not in kwargs:
             kwargs['children'] = []
-        kwargs['children'].insert(0, slider)
-        kwargs['children'].insert(1, box)
+        kwargs['children'].insert(0, box)
+        kwargs['children'].insert(1, slider)
+        
+        # Intialize the component widths
+        slider.value = '50'
         
         super().__init__(**kwargs)
         
