@@ -4,7 +4,9 @@
 
 ## 0.0.5
 
+### New Features
 
+- Make map-inspector layout panels resizable ([#22](https://github.com/google/earthengine-jupyter/issues/22))
 
 
 ## 0.0.4

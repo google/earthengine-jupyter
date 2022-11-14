@@ -2,5 +2,8 @@ website:
   sidebar:
     contents:
       - index.ipynb
+      - 00_colab.ipynb
       - 00_core.ipynb
-      - 00_ipyleaflet.ipynb
+      - 01_ipyleaflet.ipynb
+      - 02_layout.ipynb
+      - 03_rich_display.ipynb
