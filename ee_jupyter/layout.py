@@ -23,29 +23,18 @@ class MapWithInspector(ipywidgets.VBox):
         
         inspector_obj = Inspector(map_obj)
         self.inspector = inspector_obj
-        
-        output_obj = ipywidgets.Output()
-        self.output = output_obj
-        
-        tab = ipywidgets.Tab(
-            children = [self.inspector, self.output],
-            titles = ['Inspector', 'Console'],
-            selected_index = 1,
-            #layout = {'width': '50%'}
-        )
-        self.tab = tab
     
         box = ipywidgets.HBox([
             self.map,
-            self.tab,
+            self.inspector,
         ])
         
         slider = ipywidgets.FloatSlider(min=0, max=100, readout=False, layout={'width':'100%'})
         
         def handle_slider_change(change):
             self.map.layout.width = f'{change.new}%'
-            self.tab.layout.width = f'{100 - change.new}%'
-        slider.observe(handle_slider_change, names='value')        
+            self.inspector.layout.width = f'{100 - change.new}%'
+        slider.observe(handle_slider_change, names='value')          
         
         if 'children' not in kwargs:
             kwargs['children'] = []
@@ -56,10 +45,3 @@ class MapWithInspector(ipywidgets.VBox):
         slider.value = '50'
         
         super().__init__(**kwargs)
-        
-    def print(self, obj):
-        with self.output:
-            if isinstance(obj, str):
-                print(obj)
-            else:
-                display(obj)
