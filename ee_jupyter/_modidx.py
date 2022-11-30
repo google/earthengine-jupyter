@@ -2,8 +2,8 @@
 
 d = { 'settings': { 'branch': 'main',
                 'doc_baseurl': '/earthengine-jupyter',
-                'doc_host': 'https://googlestaging.github.io',
-                'git_url': 'https://github.com/googlestaging/earthengine-jupyter',
+                'doc_host': 'https://google.github.io',
+                'git_url': 'https://github.com/google/earthengine-jupyter',
                 'lib_path': 'ee_jupyter'},
   'syms': { 'ee_jupyter.colab': { 'ee_jupyter.colab.set_colab_output_cell_height': ( 'colab.html#set_colab_output_cell_height',
                                                                                      'ee_jupyter/colab.py')},
