@@ -13,3 +13,4 @@ jobs:
           echo ${{ secrets.SECRET_CREDENTIALS }} | base64 --decode > /home/runner/.config/earthengine/credentials
           ls -l /home/runner/.config/earthengine/
       - uses: fastai/workflows/nbdev-ci@master
+        with: {pre: 1}
