@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://google.github.io/earthengine-jupyter/index.html</loc>
+    <lastmod>2023-01-11T22:02:13.962Z</lastmod>
+  </url>
+  <url>
+    <loc>https://google.github.io/earthengine-jupyter/colab.html</loc>
+    <lastmod>2023-01-11T22:02:14.566Z</lastmod>
+  </url>
+  <url>
+    <loc>https://google.github.io/earthengine-jupyter/ipyleaflet.html</loc>
+    <lastmod>2023-01-11T22:02:14.898Z</lastmod>
+  </url>
+  <url>
+    <loc>https://google.github.io/earthengine-jupyter/layout.html</loc>
+    <lastmod>2023-01-11T22:02:15.118Z</lastmod>
+  </url>
+  <url>
+    <loc>https://google.github.io/earthengine-jupyter/core.html</loc>
+    <lastmod>2023-01-11T22:02:15.342Z</lastmod>
+  </url>
+</urlset>
