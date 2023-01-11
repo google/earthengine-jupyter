@@ -3,7 +3,7 @@ project:
 
 website:
   title: "earthengine-jupyter"
-  site-url: "https://googlestaging.github.io/earthengine-jupyter"
+  site-url: "https://google.github.io/earthengine-jupyter"
   description: "Tools for working with the Earth Engine from a Jupyter development environment"
   repo-branch: main
-  repo-url: "https://github.com/googlestaging/earthengine-jupyter"
+  repo-url: "https://github.com/google/earthengine-jupyter"
