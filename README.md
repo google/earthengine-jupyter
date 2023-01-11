@@ -19,25 +19,23 @@ except ModuleNotFoundError:
   result = os.system('pip -q install earthengine-jupyter')
 ```
 
-    Make sure that the earthengine-jupyter package is installed...
-
 ## How to use
 
 This lib contains a
-[`Map`](https://googlestaging.github.io/earthengine-jupyter/ipyleaflet.html#map)
+[`Map`](https://google.github.io/earthengine-jupyter/ipyleaflet.html#map)
 class that can be used to display an interactive map.
 
 ``` python
 import ee
 from ee_jupyter.core import authenticate_if_needed
 from ee_jupyter.ipyleaflet import Map
+from ee_jupyter.layout import MapWithInspector
+import ipywidgets as widgets
 ```
 
 ``` python
 authenticate_if_needed()
 ```
-
-    ✓ Authentication credentials were found.
 
 ``` python
 # Intialize the Earth Engine client library.
@@ -48,8 +46,6 @@ ee.Initialize()
 map1 = Map(center=(37.5924, -122.09), zoom=8)
 map1
 ```
-
-    Map(center=[37.5924, -122.09], controls=(ZoomControl(options=['position', 'zoom_in_text', 'zoom_in_title', 'zo…
 
 Define an Earth Engine image layer, and add it to the interactive map.
 
@@ -73,18 +69,20 @@ inspector1 = Inspector(map_object=map1)
 inspector1
 ```
 
-    Inspector(layout=Layout(border_bottom='solid', border_left='solid', border_right='solid', border_top='solid', …
-
 Typically when you create a inspector object, you will want to display
-it near the map.
+it with the map. The `MapWithInpsector` object adds a button that
+toggles the inspector functionality.
+
+The map below shows a Sentinel-2 image covering Paris. Click on the
+inspector toggle button to open the inspector.
 
 ``` python
-from ipywidgets import HBox
-
-display(HBox([map1, inspector1]))
+map_init_paris = {'center':(49.4, 2.3), 'zoom':8}
+m = MapWithInspector(**map_init_paris)
+image = ee.Image('COPERNICUS/S2_SR_HARMONIZED/20220604T104619_20220604T104620_T31UDQ')
+m.map.addLayer(image, {'bands': ['B4', 'B3', 'B2'], 'max': 2500}, 'Landsat image')
+m
 ```
-
-    HBox(children=(Map(center=[37.5924, -122.09], controls=(ZoomControl(options=['position', 'zoom_in_text', 'zoom…
 
 <div>
 
@@ -112,5 +110,3 @@ url = img1.getThumbUrl(visualization)
 
 Image(url=url, format='png', embed=True)
 ```
-
-![](index_files/figure-commonmark/cell-10-output-1.png)
