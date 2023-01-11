@@ -6,42 +6,53 @@ __all__ = ['MapWithInspector']
 # %% ../nbs/02_layout.ipynb 4
 from .ipyleaflet import Map
 from .ipyleaflet import Inspector
-import ipywidgets
-from traitlets import Unicode
+import ee
+import ipyleaflet
+import ipywidgets as widgets
+import logging
 
-# %% ../nbs/02_layout.ipynb 7
-class MapWithInspector(ipywidgets.VBox):
-    """A panel that includes a map and Inspector widget."""
+# %% ../nbs/02_layout.ipynb 8
+class MapWithInspector(widgets.HBox):
+    """A map with a tobbleable inspector."""
     
-    def __init__(self,
-                 map_obj=None,
-                 **kwargs):
-        if map_obj is None:
-            kwargs['height'] = '300px'
-            map_obj = Map(**kwargs)
-        self.map = map_obj
-        
-        inspector_obj = Inspector(map_obj)
-        self.inspector = inspector_obj
+    # Font Awesome icons: https://fontawesome.com/v4/examples/
+    ICON_INSPECTOR_SHOWN = 'info-circle 2x fw inverse'
+    ICON_INSPECTOR_HIDDEN = 'info-circle 2x fw'
     
-        box = ipywidgets.HBox([
-            self.map,
-            self.inspector,
-        ])
+    def __init__(self, **kwargs):
         
-        slider = ipywidgets.FloatSlider(min=0, max=100, readout=False, layout={'width':'100%'})
+        self.map = Map(**kwargs)
         
-        def handle_slider_change(change):
-            self.map.layout.width = f'{change.new}%'
-            self.inspector.layout.width = f'{100 - change.new}%'
-        slider.observe(handle_slider_change, names='value')          
+        button_inspector_toggle = widgets.Button(
+            icon = self.ICON_INSPECTOR_SHOWN,
+            layout = widgets.Layout(width='45px', height='45px', padding='0px')
+        )
+            
+        def show_inspector(visible):
+            if visible:
+                self.inspector.layout.width = None
+                self.inspector.layout.min_width = f'300px'
+                self.inspector.disabled = False
+            else:
+                self.inspector.layout.width = f'0%'
+                self.inspector.layout.min_width = None
+                self.inspector.disabled = True
         
-        if 'children' not in kwargs:
-            kwargs['children'] = []
-        kwargs['children'].insert(0, box)
-        kwargs['children'].insert(1, slider)
+        def on_button_clicked(_b):
+            if _b.icon == self.ICON_INSPECTOR_HIDDEN:
+                show_inspector(False)
+                _b.icon = self.ICON_INSPECTOR_SHOWN
+            else:
+                show_inspector(True)
+                _b.icon = self.ICON_INSPECTOR_HIDDEN
+        button_inspector_toggle.on_click(on_button_clicked)
         
-        # Intialize the component widths
-        slider.value = '50'
+        widget_control1 = ipyleaflet.WidgetControl(widget=button_inspector_toggle,
+                                                   position='topright')
+        self.map.add_control(widget_control1)
+        self.inspector = Inspector(self.map)
+        
+        kwargs['children'] = [self.map, self.inspector]
+        show_inspector(False)
         
         super().__init__(**kwargs)
